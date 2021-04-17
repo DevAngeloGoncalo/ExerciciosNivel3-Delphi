@@ -1,0 +1,22 @@
+program Segundo;
+
+uses
+  Vcl.Forms,
+  Unit2 in 'Unit2.pas' {Form2},
+  Unit3 in 'Unit3.pas' {VendaPrincipal},
+  Unit4 in 'Unit4.pas' {VendaInterna},
+  Unit5 in 'Unit5.pas' {VendaExterna},
+  Unit6 in 'Unit6.pas' {VendaMOIP};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TVendaPrincipal, VendaPrincipal);
+  Application.CreateForm(TVendaInterna, VendaInterna);
+  Application.CreateForm(TVendaExterna, VendaExterna);
+  Application.CreateForm(TVendaMOIP, VendaMOIP);
+  Application.Run;
+end.

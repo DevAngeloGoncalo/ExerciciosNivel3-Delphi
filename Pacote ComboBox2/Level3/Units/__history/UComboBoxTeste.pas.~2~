@@ -1,0 +1,47 @@
+unit UComboBoxTeste;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Vcl.Controls, Vcl.StdCtrls;
+
+type
+  TComboBoxTeste = class(TComboBox)
+  private
+    { Private declarations }
+    FItemsKey : TStringList;
+
+
+    function getItemsKey : TStringList;
+    procedure setItemsKey(Valor : TStringList);
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+  published
+    { Published declarations }
+    property ItemKey : TStringList read getItemsKey write setItemsKey;
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('Samples', [TComboBoxTeste]);
+end;
+
+{ TComboBoxTeste }
+
+function TComboBoxTeste.getItemsKey: TStringList;
+begin
+  Result := FItemsKey;
+end;
+
+procedure TComboBoxTeste.setItemsKey(Valor: TStringList);
+begin
+  FItemsKey := Valor;
+end;
+
+end.

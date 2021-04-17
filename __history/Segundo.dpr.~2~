@@ -1,0 +1,22 @@
+program Segundo;
+
+uses
+  Vcl.Forms,
+  UMenuPrincipal in 'UMenuPrincipal.pas' {UFormMenuPrincipal},
+  UVendaPrincipal in 'UVendaPrincipal.pas' {VendaPrincipal},
+  UVendaInterna in 'UVendaInterna.pas' {VendaInterna},
+  UVendaExterna in 'UVendaExterna.pas' {VendaExterna},
+  UVendaMOIP in 'UVendaMOIP.pas' {VendaMOIP};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TUFormMenuPrincipal, UFormMenuPrincipal);
+  Application.CreateForm(TVendaPrincipal, VendaPrincipal);
+  Application.CreateForm(TVendaInterna, VendaInterna);
+  Application.CreateForm(TVendaExterna, VendaExterna);
+  Application.CreateForm(TVendaMOIP, VendaMOIP);
+  Application.Run;
+end.
